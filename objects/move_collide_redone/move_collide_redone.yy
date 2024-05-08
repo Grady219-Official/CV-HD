@@ -31,8 +31,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "maria_resprite",
-    "path": "sprites/maria_resprite/maria_resprite.yy",
+    "name": "spr_Shan_idle",
+    "path": "sprites/spr_Shan_idle/spr_Shan_idle.yy",
   },
   "spriteMaskId": null,
   "visible": true,
