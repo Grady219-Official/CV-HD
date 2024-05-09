@@ -6,6 +6,8 @@ key_left = ord("A")
 key_down = ord("S")
 key_right = ord("D")
 
+
+
 pad_up = gp_padu
 pad_left = gp_padl
 pad_down = gp_padd
@@ -23,6 +25,7 @@ pad_trgrR = gp_shoulderrb
 key_jump = (vk_numpad2)
 key_jump_held = scr_button_check(true,0,pad_faceD,key_jump)
 key_backdash = (vk_numpad4)
+key_B = vk_numpad2
 x_axis = 0
 y_axis = 0
 
