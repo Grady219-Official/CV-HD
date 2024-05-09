@@ -41,7 +41,7 @@ currentMP = maxMP
 
 subX = x
 subY = y
-move_speed = 1.0
+move_speed = 1.5
 slide_speed = 4
 dive_speed = 3
 backdash_speed = -4

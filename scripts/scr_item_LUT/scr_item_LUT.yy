@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_item_LUT",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "system data",
-    "path": "folders/Scripts/system data.yy",
+  "$GMScript":"",
+  "%Name":"scr_item_LUT",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_item_LUT",
+  "parent":{
+    "name":"system data",
+    "path":"folders/Scripts/system data.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }
