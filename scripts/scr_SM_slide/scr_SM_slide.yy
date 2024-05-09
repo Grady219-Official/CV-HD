@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_SM_slide",
   "parent":{
-    "name":"State Machine Scripts",
-    "path":"folders/Scripts/State Machine Scripts.yy",
+    "name":"Player",
+    "path":"folders/Scripts/State Machine Scripts/Player.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
