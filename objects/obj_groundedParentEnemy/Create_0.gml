@@ -6,8 +6,8 @@ vspd = 0
 hspd = 0
 subX = x
 subY = y
-grav = 1.2
-movespeed = .1
+grav = 0.125
+movespeed = 1
 
 update_movement = function()
 {

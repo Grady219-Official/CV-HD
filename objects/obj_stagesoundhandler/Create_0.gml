@@ -9,7 +9,7 @@ switch(current_chapter)
 	{
 		if(!audio_is_playing(bgm_chapter1))
 		{
-			current_song = audio_play_sound(bgm_multiplayer,1,false)
+			current_song = audio_play_sound(bgm_chapter1,1,false)
 			break;
 		}
 		

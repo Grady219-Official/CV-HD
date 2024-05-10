@@ -15,6 +15,11 @@ switch (mState)
 		scr_SM_enemyChasing()
 	break;
 	}
+	case ENEMY_STATES.ATTACK:
+	{
+		scr_SM_enemyAttack()
+	break;
+	}
 }
 
 update_movement()
