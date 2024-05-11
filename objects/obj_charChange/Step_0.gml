@@ -1,4 +1,4 @@
-if(place_meeting(x,y,move_collide_redone))
+if(place_meeting(x,y,obj_PL_1))
 {
 	playerHere = true
 }

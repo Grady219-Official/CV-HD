@@ -2,5 +2,5 @@
 // You can write your code in this editor
 
 
-x = move_collide_redone.x
-y= move_collide_redone.y
+x = obj_PL_1.x
+y= obj_PL_1.y

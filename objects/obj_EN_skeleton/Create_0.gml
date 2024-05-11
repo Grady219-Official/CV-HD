@@ -65,7 +65,7 @@ update_movement = function()
 	subY = subY + vspd;
 	y = round(subY);
 }
-enum ENEMY_STATES
+enum SKELE_ENEMY_STATES
 {
 	IDLE,
 	ACTIVATED,
@@ -73,7 +73,7 @@ enum ENEMY_STATES
 	ATTACK
 }
 
-mState = ENEMY_STATES.IDLE
+mState = SKELE_ENEMY_STATES.IDLE
 mInnerState = 0; // 0-enter, 1-update, 2-exit
 mNextState = mState
 

@@ -3,7 +3,7 @@
 
 
 
-if round(move_collide_redone.y > self.y)
+if round(obj_PL_1.y > self.y)
 {
 	mask_index = spr_colFallThroughEmpty
 }
