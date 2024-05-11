@@ -7,11 +7,10 @@ if (mInnerState == 0)  //enter
 		}
 		if (mInnerState == 1)  //update
 		{						//use ChangeState() to go to next state
-			if(abs(momentum<maxSpeed))
-			{
-				momentum+=acceleration
-			}
-			move_towards_point(homeX,homeY,momentum)
+			momentumX += moveDirectionX*acceleration
+			momentumY+= moveDirectionY*acceleration
+			x+=momentumX
+			y+=momentumY
 		}
 		if (mInnerState == 2)  //exit
 		{
