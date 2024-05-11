@@ -7,6 +7,9 @@ if (mInnerState == 0)  //enter
 		}
 		if (mInnerState == 1)  //update
 		{						//use ChangeState() to go to next state
+			
+			targetX = lengthdir_x(targetDistance,targetDir) + x
+			targetY = lengthdir_y(targetDistance,targetDir) + y
 			momentumX += moveDirectionX*acceleration
 			momentumY+= moveDirectionY*acceleration
 			x+=momentumX

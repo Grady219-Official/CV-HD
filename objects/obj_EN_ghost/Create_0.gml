@@ -1,14 +1,14 @@
 homeRadius = 15
-targetDistance = homeRadius*.6
+targetDistance = 10
 homeX = x + homeRadius/2
 homeY = y +homeRadius/2
 targetDir = 0
-targetX = lengthdir_x(targetDistance,targetDir)
-targetY = lengthdir_y(targetDistance,targetDir)
+targetX = lengthdir_x(targetDistance,targetDir) + x//fix with point distance
+targetY = lengthdir_y(targetDistance,targetDir) + y
 momentumX = 0
 momentumY = 0
 acceleration = 0.02
-maxSpeed = 4
+maxSpeed = 1
 moveDirectionX = sign(homeX-targetX)
 moveDirectionY = sign(homeY-targetY)
 
