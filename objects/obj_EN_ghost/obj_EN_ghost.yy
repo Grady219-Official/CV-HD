@@ -32,8 +32,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_projBone",
-    "path":"sprites/spr_projBone/spr_projBone.yy",
+    "name":"spr_EN_ghostIdle",
+    "path":"sprites/spr_EN_ghostIdle/spr_EN_ghostIdle.yy",
   },
   "spriteMaskId":null,
   "visible":true,

@@ -7,13 +7,22 @@ if (mInnerState == 0)  //enter
 		}
 		if (mInnerState == 1)  //update
 		{						//use ChangeState() to go to next state
-			
-			targetX = lengthdir_x(targetDistance,targetDir) + x
-			targetY = lengthdir_y(targetDistance,targetDir) + y
-			momentumX += moveDirectionX*acceleration
-			momentumY+= moveDirectionY*acceleration
-			x+=momentumX
-			y+=momentumY
+			if(collision_circle(x,y,100,obj_PL_1,false,true))
+			{
+				ChangeState(GHOST_ENEMY_STATES.CHASING)
+				
+			}
+			else
+			{
+				targetX = lengthdir_x(targetDistance,targetDir) + homeX
+				targetY = lengthdir_y(targetDistance,targetDir) + homeY
+				momentumX += moveDirectionX*acceleration
+				momentumY+= moveDirectionY*acceleration
+				if(abs(momentumX)>=maxSpeed) {momentumX = maxSpeed*sign(momentumX)}
+				if(abs(momentumY)>=maxSpeed) {momentumY = maxSpeed*sign(momentumY)}
+				x+=momentumX
+				y+=momentumY
+			}
 		}
 		if (mInnerState == 2)  //exit
 		{
