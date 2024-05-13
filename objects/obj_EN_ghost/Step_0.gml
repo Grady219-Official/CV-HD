@@ -18,4 +18,3 @@ switch (mState)
 }
 moveDirectionX = sign(targetX-x)
 moveDirectionY = sign(targetY-y)
-image_xscale = sign(moveDirectionX)

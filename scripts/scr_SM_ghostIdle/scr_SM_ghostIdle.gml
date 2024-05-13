@@ -22,6 +22,7 @@ if (mInnerState == 0)  //enter
 				if(abs(momentumY)>=maxSpeed) {momentumY = maxSpeed*sign(momentumY)}
 				x+=momentumX
 				y+=momentumY
+				image_xscale = sign(sign(momentumX))
 			}
 		}
 		if (mInnerState == 2)  //exit
