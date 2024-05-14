@@ -21,13 +21,13 @@ if (mInnerState == 0)  //enter
 					{
 						
 						hspd =  -movespeed
-						image_xscale = -hspd
+						image_xscale = 1
 						
 					}
-					else if(x > obj_PL_1.x)
+					else
 					{
 						hspd =  movespeed
-						image_xscale = -hspd
+						image_xscale = -1
 					}
 				}
 				else if(!collision_circle(x,y,90,obj_PL_1,false,true))
@@ -36,12 +36,12 @@ if (mInnerState == 0)  //enter
 					{
 						
 						hspd =  movespeed
-						image_xscale = hspd
+						image_xscale = 1
 					}
 					else
 					{
 						hspd = -movespeed
-						image_xscale = hspd
+						image_xscale = -1
 					}
 					
 				}

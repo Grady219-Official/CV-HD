@@ -1,4 +1,4 @@
-if(scr_button_check_pressed(true,0,move_collide_redone.pad_right,move_collide_redone.key_right))
+if(scr_button_check_pressed(true,0,obj_PL_1.pad_right,obj_PL_1.key_right))
 {
 	if(current_gridX = 3)
 	{current_gridX = 0}
@@ -7,7 +7,7 @@ if(scr_button_check_pressed(true,0,move_collide_redone.pad_right,move_collide_re
 	
 	audio_play_sound(choose(snd_cursor1,snd_cursor2),1,false)
 }
-else if(scr_button_check_pressed(true,0,move_collide_redone.pad_left,move_collide_redone.key_left))
+else if(scr_button_check_pressed(true,0,obj_PL_1.pad_left,obj_PL_1.key_left))
 {
 	if(current_gridX = 0)
 	{current_gridX = 3}
@@ -15,7 +15,7 @@ else if(scr_button_check_pressed(true,0,move_collide_redone.pad_left,move_collid
 	{current_gridX--}
 	audio_play_sound(choose(snd_cursor1,snd_cursor2),1,false)
 }
-else if(scr_button_check_pressed(true,0,move_collide_redone.pad_up,move_collide_redone.key_up))
+else if(scr_button_check_pressed(true,0,obj_PL_1.pad_up,obj_PL_1.key_up))
 {
 	if(current_gridY = 0)
 	{current_gridY = 2}
@@ -23,7 +23,7 @@ else if(scr_button_check_pressed(true,0,move_collide_redone.pad_up,move_collide_
 	{current_gridY--}
 	audio_play_sound(choose(snd_cursor1,snd_cursor2),1,false)
 }
-else if(scr_button_check_pressed(true,0,move_collide_redone.pad_down,move_collide_redone.key_down))
+else if(scr_button_check_pressed(true,0,obj_PL_1.pad_down,obj_PL_1.key_down))
 {
 	if(current_gridY = 2)
 	{current_gridY = 0}
@@ -31,7 +31,7 @@ else if(scr_button_check_pressed(true,0,move_collide_redone.pad_down,move_collid
 	{current_gridY++}
 	audio_play_sound(choose(snd_cursor1,snd_cursor2),1,false)
 }
-if(scr_button_check_pressed(true,0,move_collide_redone.pad_faceD,move_collide_redone.key_jump))
+if(scr_button_check_pressed(true,0,obj_PL_1.pad_faceD,obj_PL_1.key_jump))
 {
 	selected_grid = (current_gridX)+(current_gridY*4)
 	switch selected_grid
@@ -93,15 +93,15 @@ if(scr_button_check_pressed(true,0,move_collide_redone.pad_faceD,move_collide_re
 		}
 	}
 	scr_spriteSet(obj_savemanager.current_character)
-	move_collide_redone.ChangeState(PLAYER_STATES.IDLE);
+	obj_PL_1.ChangeState(PLAYER_STATES.IDLE);
 	audio_play_sound(snd_confirm,1,false)
 	instance_destroy(obj_charSelTest)
 	instance_destroy(self)
 	
 }
-else if(scr_button_check_pressed(true,0,move_collide_redone.pad_faceR,move_collide_redone.key_B))
+else if(scr_button_check_pressed(true,0,obj_PL_1.pad_faceR,obj_PL_1.key_B))
 {
-	move_collide_redone.ChangeState(PLAYER_STATES.IDLE);
+	obj_PL_1.ChangeState(PLAYER_STATES.IDLE);
 	audio_play_sound(snd_cancel,1,false)
 	instance_destroy(obj_charSelTest)
 	instance_destroy(self)
