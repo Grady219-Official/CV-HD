@@ -12,9 +12,13 @@ if (mInnerState == 0)  //enter
 			{
 				ChangeState(SKELE_ENEMY_STATES.ACTIVATED)	
 			}
+		 	else if(irandom_range(1,100) = 1)
+			{
+				ChangeState(SKELE_ENEMY_STATES.ATTACK)
+			}
 			else
 			{   
-				if(collision_circle(x,y,40,obj_PL_1,false,true)|| hspd = 0)
+				if(collision_circle(x,y,40,obj_PL_1,false,true || hspd = 0))
 				{
 					
 					if(x <= obj_PL_1.x)
@@ -26,7 +30,7 @@ if (mInnerState == 0)  //enter
 					}
 					else
 					{
-						hspd =  movespeed
+						hspd = movespeed
 						image_xscale = -1
 					}
 				}
@@ -47,10 +51,6 @@ if (mInnerState == 0)  //enter
 				}
 				
 			}
-			if(irandom_range(1,100) = 1)
-			{
-				ChangeState(SKELE_ENEMY_STATES.ATTACK)
-			}	
 		}
 		if (mInnerState == 2)  //exit
 		{
