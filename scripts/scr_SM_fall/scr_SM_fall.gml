@@ -16,8 +16,14 @@ if (mInnerState == 0)  //enter
 				image_xscale = sign(hMove);
 				p1_direction = sign(hMove);
 			
-			if (isOnGround()/* && !scr_button_check_pressed(true,0,pad_faceD,key_jump)*/)
+			if (hMove!=0 && isOnGround())
+			{
+				ChangeState(PLAYER_STATES.WALK)
+			}
+			else if (isOnGround()/* && !scr_button_check_pressed(true,0,pad_faceD,key_jump)*/)
+				{
 				ChangeState(PLAYER_STATES.IDLE);
+				}
 			//else if(isOnGround && keyboard_check_pressed(key_jump))
 			//{
 			//	ChangeState(PLAYER_STATES.JUMPF)

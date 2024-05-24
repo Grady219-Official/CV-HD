@@ -8,7 +8,7 @@ if (mInnerState == 0)  //enter
 		if (mInnerState == 1)  //update
 		{						//use ChangeState() to go to next state
 			targetX = obj_PL_1.x
-			targetY = obj_PL_1.y
+			targetY = obj_PL_1.y - 16
 			momentumX += moveDirectionX*acceleration
 			momentumY+= moveDirectionY*acceleration
 			if(abs(momentumX)>=maxSpeed) {momentumX = maxSpeed*sign(momentumX)}

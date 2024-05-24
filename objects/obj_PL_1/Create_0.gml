@@ -63,16 +63,16 @@ update_movement = function()
 	vspd += grav;
 	
 	//collision response based off Shaun Spalding's implementation
-	if (place_meeting(round(subX + hspd), y, obj_colBox))
+	if (place_meeting(round(subX + hspd), y, layer_tilemap_get_id("Tiles_1")))
 	{
 		yplus = 0	
-		while (place_meeting(round(subX+hspd), y - yplus,obj_colBox) && (yplus <= abs (hspd)))
+		while (place_meeting(round(subX+hspd), y - yplus,layer_tilemap_get_id("Tiles_1")) && (yplus <= abs (hspd)))
 		{
 			yplus +=1
 		}
-		if (place_meeting(round(subX + hspd), y - yplus, obj_colBox))	
+		if (place_meeting(round(subX + hspd), y - yplus, layer_tilemap_get_id("Tiles_1")))	
 		{	
-			while (!place_meeting(round(subX + sign(hspd)), y, obj_colBox))
+			while (!place_meeting(round(subX + sign(hspd)), y, layer_tilemap_get_id("Tiles_1")))
 			{
 				subX = subX +  sign(hspd); 
 			}
@@ -94,18 +94,18 @@ update_movement = function()
 	x = round(subX);
 	
 // downward slope check
-	if !place_meeting(x,y,obj_colBox) && vspd >= 0 && place_meeting(x,y+2+abs(hspd),obj_colBox)
+	if !place_meeting(x,y,layer_tilemap_get_id("Tiles_1")) && vspd >= 0 && place_meeting(x,y+2+abs(hspd),layer_tilemap_get_id("Tiles_1"))
 	{
-	    while(!place_meeting(x,y+1,obj_colBox))
+	    while(!place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1")))
 	    {
 	        subY+=1
 			y += 1;
 	    }
 	}
 // vertical collision check
-	if (place_meeting(x, round(subY + vspd), obj_colBox))
+	if (place_meeting(x, round(subY + vspd), layer_tilemap_get_id("Tiles_1")))
 	{
-		while (!place_meeting(x, round(subY + sign(vspd)), obj_colBox))
+		while (!place_meeting(x, round(subY + sign(vspd)), layer_tilemap_get_id("Tiles_1")))
 		{
 			subY = subY + sign(vspd)
 		}
@@ -141,5 +141,5 @@ ChangeState = function(nextState)
 }
 isOnGround = function()
 {
-	return place_meeting(x,y+1,obj_colBox)
+	return place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1"))
 }

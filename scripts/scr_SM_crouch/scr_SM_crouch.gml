@@ -21,7 +21,7 @@ if (mInnerState == 0)  //enter
 				p1_direction = sign(hMove)
 				
 			}
-			if(!scr_button_check(true,0,pad_down,key_down) && !place_meeting(x,y-2,obj_colBox)) 
+			if(!scr_button_check(true,0,pad_down,key_down) && !place_meeting(x,y-17,layer_tilemap_get_id("Tiles_1"))) 
 			{
 				ChangeState(PLAYER_STATES.IDLE)
 			}
