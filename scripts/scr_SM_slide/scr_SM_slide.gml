@@ -18,14 +18,15 @@ if (mInnerState == 0)  //enter
 				ChangeState(PLAYER_STATES.FALL);
 				p1_current_jump = 1
 				hspd = 0
-				newX = round(abs(subX)) * sign(subX)
-				x = newX
+				//newX = round(abs(subX)) * sign(subX)
+				//x = newX
 			}
 			else if(abs(hspd) !=0)
 				hspd -= (slide_speed/28) * image_xscale
 			else if(((abs(hspd)) <= 0 && image_index = image_number - 1))
 				{
 					ChangeState(PLAYER_STATES.CROUCH)
+					hspdFraction = 0
 				}
 		}
 		if (mInnerState == 2)  //exit

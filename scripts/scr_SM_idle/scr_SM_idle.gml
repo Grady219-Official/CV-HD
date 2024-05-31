@@ -10,7 +10,11 @@ if (mInnerState == 0)  //enter
 			hspd = 0
 			p1_current_jump = 2
 		}
-		if(scr_button_check_pressed(true,0,pad_shdrL,key_backdash))
+		if(!isOnGround())
+		{
+		ChangeState(PLAYER_STATES.FALL)
+		}
+		else if(scr_button_check_pressed(true,0,pad_shdrL,key_backdash))
 		{
 			ChangeState(PLAYER_STATES.BACKDASH);
 		}

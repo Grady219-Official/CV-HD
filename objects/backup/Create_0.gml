@@ -1,5 +1,4 @@
-
-/// @description Insert description here
+/*@description Insert description here
 // You can write your code in this editor
 //Input register
 key_up = ord("W")
@@ -51,9 +50,7 @@ dive_speed = 3
 backdash_speed = -4
 p1_direction = 1
 hspd = 0
-hspdFraction = 0
 vspd = 0
-vspdFraction = 0
 grav = .125
 jump_strength = 4.35
 jump2_strength = jump_strength * 0.8
@@ -65,26 +62,26 @@ update_movement = function()
 {
 	vspd += grav;
 	
-	
 	//collision response based off Shaun Spalding's implementation
-	if (place_meeting(x + hspd, y, layer_tilemap_get_id("Tiles_1")))
+	if (place_meeting(round(subX + hspd), y, layer_tilemap_get_id("Tiles_1")))
 	{
 		yplus = 0	
-		while (place_meeting(x+hspd, y - yplus,layer_tilemap_get_id("Tiles_1")) && (yplus <= abs (hspd)))
+		while (place_meeting(round(subX+hspd), y - yplus,layer_tilemap_get_id("Tiles_1")) && (yplus <= abs (hspd)))
 		{
 			yplus +=1
 		}
-		if (place_meeting(x + hspd, y - yplus, layer_tilemap_get_id("Tiles_1")))	
+		if (place_meeting(round(subX + hspd), y - yplus, layer_tilemap_get_id("Tiles_1")))	
 		{	
-			while (!place_meeting(x + sign(hspd), y, layer_tilemap_get_id("Tiles_1")))
+			while (!place_meeting(round(subX + sign(hspd)), y, layer_tilemap_get_id("Tiles_1")))
 			{
-				x +=   sign(hspd); 
+				subX = subX +  sign(hspd); 
 			}
 			hspd = 0;
 		}
 		else
 		{
-			y-= yplus
+			subY-= yplus
+			y = round(subY)
 		}
 		//else if(!place_meeting(x+p1_direction,y,obj_colBox)){x+=p1_direction}	
 	}
@@ -93,28 +90,29 @@ update_movement = function()
 //	x = ceil(abs(subX))// * sign(p1_direction)
 	
 	
-	x  +=  hspd;
+	subX = subX +  hspd;
+	x = round(subX);
 	
 // downward slope check
 	if !place_meeting(x,y,layer_tilemap_get_id("Tiles_1")) && vspd >= 0 && place_meeting(x,y+2+abs(hspd),layer_tilemap_get_id("Tiles_1"))
 	{
 	    while(!place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1")))
 	    {
+	        subY+=1
 			y += 1;
 	    }
 	}
 // vertical collision check
-	if (place_meeting(x,y + vspd, layer_tilemap_get_id("Tiles_1")))
+	if (place_meeting(x, round(subY + vspd), layer_tilemap_get_id("Tiles_1")))
 	{
-		while (!place_meeting(x, y + sign(vspd), layer_tilemap_get_id("Tiles_1")))
+		while (!place_meeting(x, round(subY + sign(vspd)), layer_tilemap_get_id("Tiles_1")))
 		{
-			y +=  sign(vspd)
+			subY = subY + sign(vspd)
 		}
 		vspd = 0;
-		vspdFraction= 0
 	}
-	y += vspd;
-	
+	subY = subY + vspd;
+	y = round(subY);
 }
 
 enum PLAYER_STATES
@@ -143,6 +141,5 @@ ChangeState = function(nextState)
 }
 isOnGround = function()
 {
-	
 	return place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1"))
 }

@@ -16,8 +16,8 @@ if (mInnerState == 0)  //enter
 				ChangeState(PLAYER_STATES.FALL);
 				p1_current_jump = 1
 				hspd = 0
-				newX = round(abs(subX)) * sign(subX)
-				x = newX
+				//newX = round(abs(subX)) * sign(subX)
+				//x = newX
 			}
 			else if(scr_button_check_pressed(true,0,pad_faceD,key_jump))
 			{
@@ -32,6 +32,7 @@ if (mInnerState == 0)  //enter
 			else if(abs(hspd) <= 0 && image_index = image_number - 1)
 				{
 					ChangeState(PLAYER_STATES.IDLE)
+					hspdFraction = 0
 				}
 			if(obj_savemanager.current_character = "Alucard")
 			{

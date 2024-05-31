@@ -1,4 +1,4 @@
-
+/*
 if (sprite_index == anim_jumpU || sprite_index == anim_jumpU)
 {
 	image_index = image_number - 1;

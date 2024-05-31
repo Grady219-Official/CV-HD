@@ -14,7 +14,7 @@ if (mInnerState == 0)  //enter
 			var hMove = -scr_button_check(true,0,pad_left,key_left) + scr_button_check(true,0,pad_right,key_right);
 			hspd = hMove * move_speed
 			
-			if(scr_button_check(true,0,pad_shdrL,key_backdash))
+			if(scr_button_check_pressed(true,0,pad_shdrL,key_backdash))
 			{
 				ChangeState(PLAYER_STATES.BACKDASH);
 			}

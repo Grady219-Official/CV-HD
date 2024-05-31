@@ -8,6 +8,7 @@ if (mInnerState == 0)  //enter
 			image_index = 0
 			image_speed = 2
 			vspd = -jump2_strength;
+			vspdFraction = 0
 			p1_current_jump --
 		}
 		if (mInnerState == 1)  //update

@@ -1,3 +1,4 @@
+/*
 //Debug code  REMOVE LATER!!!!!!!!!!!!
 if(keyboard_check_pressed(vk_escape))
 {
@@ -93,15 +94,7 @@ switch (mState)
 	break;
 	}
 }
-//fraction code
-hspd+=hspdFraction
-	vspd+=vspdFraction
 
-
-hspdFraction = hspd - floor(abs(hspd)) * sign(hspd)
-	hspd -= hspdFraction
-vspdFraction = vspd - floor(abs(vspd)) * sign(vspd)
-	vspd -= vspdFraction
 
 
 
