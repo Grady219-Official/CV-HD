@@ -175,7 +175,21 @@ switch (_menu)
 			case 4: // Start
 			{
 				audio_stop_all()
-				room_goto(rom_hub)
+				switch (obj_savemanager.current_chapter)
+				{
+					case "Chapter 1":
+					{
+						room_goto(rom_chapter1N)
+					break;
+					}
+					case "Hub":
+					{
+						room_goto(rom_hub)
+					break;
+					}
+				
+				
+				}
 			break;
 			}
 		}

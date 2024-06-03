@@ -1,3 +1,4 @@
+depth = -1000
 homeRadius = 50
 targetDistance = 50
 homeX = x + homeRadius/2

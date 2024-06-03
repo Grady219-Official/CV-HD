@@ -93,6 +93,7 @@ switch (mState)
 	break;
 	}
 }
+vspd += grav;
 //fraction code
 hspd+=hspdFraction
 	vspd+=vspdFraction
@@ -100,9 +101,10 @@ hspd+=hspdFraction
 
 hspdFraction = hspd - floor(abs(hspd)) * sign(hspd)
 	hspd -= hspdFraction
+	//if(hspd = 0) hspdFraction = 0
 vspdFraction = vspd - floor(abs(vspd)) * sign(vspd)
 	vspd -= vspdFraction
-
+	//if(vspd = 0) hvspdFraction = 0
 
 
 //Execute states based on previous states and current state

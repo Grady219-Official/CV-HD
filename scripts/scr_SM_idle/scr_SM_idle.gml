@@ -26,10 +26,10 @@ if (mInnerState == 0)  //enter
 			else if scr_button_check(true,0,pad_down,key_down) {ChangeState(PLAYER_STATES.CROUCH);}
 			else if scr_button_check(true,0,pad_up,key_up)
 			{
-				if(obj_charChange.playerHere = true)
+				if(place_meeting(x,y,obj_charChange))
 				{
 					ChangeState(PLAYER_STATES.CUTSCENE);
-					instance_create_depth(x,y,layer,obj_charSelTest)
+					instance_create_depth(x,y,depth,obj_charSelTest)
 				}
 			}
 			
