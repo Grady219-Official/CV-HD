@@ -182,6 +182,31 @@ switch (_menu)
 						room_goto(rom_chapter1N)
 					break;
 					}
+					case "Chapter 2":
+					{
+						room_goto(rom_chapter2N)
+					break;
+					}
+					case "Chapter 3":
+					{
+						room_goto(rom_chapter3N)
+					break;
+					}
+					case "Chapter 4":
+					{
+						room_goto(rom_chapter4N)
+					break;
+					}
+					case "Chapter 5":
+					{
+						room_goto(rom_chapter5N)
+					break;
+					}
+					case "Chapter 6":
+					{
+						room_goto(rom_chapter6N)
+					break;
+					}
 					case "Hub":
 					{
 						room_goto(rom_hub)

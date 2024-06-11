@@ -5,6 +5,7 @@ if (mInnerState == 0)  //enter
 		{
 			instance_create_depth(x,y-30,100,obj_EN_projBone)
 			hspd = 0
+			hspdFraction = 0
 			alarm[1] = 30
 			mInnerState = 1;
 		}

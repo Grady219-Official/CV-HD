@@ -4,12 +4,14 @@ function scr_SM_skeleEnemyIdle(){
 if (mInnerState == 0)  //enter
 		{
 			mInnerState = 1;
+			hspd = 0
+			hspdFraction = 0
 		}
 		if (mInnerState == 1)  //update
 		{						//use ChangeState() to go to next state
-			if(collision_circle(x,y,200,obj_PL_1,false,true))
+			if(collision_circle(x,y,aggroRadius,obj_PL_1,false,true))
 			{
-				ChangeState(SKELE_ENEMY_STATES.ACTIVATED)
+				ChangeState(SKELE_ENEMY_STATES.CHASING)
 				
 			}
 		}

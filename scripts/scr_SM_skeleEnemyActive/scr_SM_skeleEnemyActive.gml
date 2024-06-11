@@ -8,14 +8,15 @@ if (mInnerState == 0)  //enter
 		}
 		if (mInnerState == 1)  //update
 		{						//use ChangeState() to go to next state
-			if(collision_circle(x,y,200,obj_PL_1,false,true))
+			if(collision_circle(x,y,aggroRadius,obj_PL_1,false,true))
 			{
 				ChangeState(SKELE_ENEMY_STATES.CHASING)
 			}
-			else if(hspd =0 || alarm[0]<=0)
+			else if((hspd = 0 && hspdFraction = 0) || alarm[0]<=0)
 			{
+				//hspdFraction = 0
 				hspd = choose(-movespeed,movespeed)
-				image_xscale = hspd
+				image_xscale = sign(hspd)
 				alarm[0] = irandom_range(10,40)
 			}
 			

@@ -1,39 +1,44 @@
 active = false
 aggro = false
+aggroRadius = 150
+unaggroRadius = 200
 hp = 1
 alive = true
 vspd = 0
 hspd = 0
-subX = x
-subY = y
+depth = -1
+hspdFraction = 0
+vspdFraction = 0
 grav = 0.125
-movespeed = 1
+movespeed = 0.5
 
 update_movement = function()
 {
-	vspd += grav;
+	
+	
 	
 	//collision response based off Shaun Spalding's implementation
-	if (place_meeting(round(subX + hspd), y, obj_colBox))
+	if (place_meeting(x + hspd, y, layer_tilemap_get_id("Tiles_1"))  || place_meeting(x + hspd, y, obj_colBox))
 	{
-		yplus = 0	
-		while (place_meeting(round(subX+hspd), y - yplus,obj_colBox) && (yplus <= abs (hspd)))
-		{
-			yplus +=1
-		}
-		if (place_meeting(round(subX + hspd), y - yplus, obj_colBox))	
-		{	
-			while (!place_meeting(round(subX + sign(hspd)), y, obj_colBox))
+			
+			yplus = 0	
+			while ((place_meeting(x+hspd, y - yplus,layer_tilemap_get_id("Tiles_1"))  || place_meeting(x + hspd, y-yplus, obj_colBox))  && (yplus <= abs (hspd)))
 			{
-				subX = subX +  sign(hspd); 
+				yplus +=1
 			}
-			hspd = 0;
-		}
-		else
-		{
-			subY-= yplus
-			y = round(subY)
-		}
+			if (place_meeting(x + hspd, y - yplus, layer_tilemap_get_id("Tiles_1"))  || place_meeting(x + hspd, y-yplus, obj_colBox))	
+			{	
+				while !(place_meeting(x + sign(hspd), y, layer_tilemap_get_id("Tiles_1"))  || place_meeting(x + sign(hspd), y, obj_colBox))
+				{
+					x +=   sign(hspd); 
+				}
+				hspd = 0;
+				hspdFraction = 0
+			}
+			else
+			{
+				y-= yplus
+			}
 		//else if(!place_meeting(x+p1_direction,y,obj_colBox)){x+=p1_direction}	
 	}
 	
@@ -41,35 +46,39 @@ update_movement = function()
 //	x = ceil(abs(subX))// * sign(p1_direction)
 	
 	
-	subX = subX +  hspd;
-	x = round(subX);
+	x  +=  hspd;
 	
 // downward slope check
-	if !place_meeting(x,y,obj_colBox) && vspd >= 0 && place_meeting(x,y+2+abs(hspd),obj_colBox)
+	if (
+			!(place_meeting(x,y,layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y + vspd,obj_colBox))
+			&& vspd >= 0 
+			&& (place_meeting(x,y+2+abs(hspd),layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y+2+abs(hspd),obj_colBox))
+		)
 	{
-	    while(!place_meeting(x,y+1,obj_colBox))
+	    while !(place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y+1,obj_colBox))
 	    {
-	        subY+=1
 			y += 1;
 	    }
 	}
 // vertical collision check
-	if (place_meeting(x, round(subY + vspd), obj_colBox))
+	if (place_meeting(x,y + vspd, layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y + vspd,obj_colBox))
 	{
-		while (!place_meeting(x, round(subY + sign(vspd)), obj_colBox))
+		while !(place_meeting(x, y + sign(vspd), layer_tilemap_get_id("Tiles_1")) || place_meeting(x, y + sign(vspd), obj_colBox))
 		{
-			subY = subY + sign(vspd)
+			y +=  sign(vspd)
 		}
 		vspd = 0;
+		vspdFraction= 0
 	}
-	subY = subY + vspd;
-	y = round(subY);
+	y += vspd;
+	
 }
 enum SKELE_ENEMY_STATES
 {
 	IDLE,
 	ACTIVATED,
 	CHASING,
+	RETREAT,
 	ATTACK
 }
 

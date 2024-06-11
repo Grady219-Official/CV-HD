@@ -1,0 +1,6 @@
+//draw_set_alpha(0.5)
+//draw_circle_color(x,y,aggroRadius,c_red,c_red,false)
+//draw_circle_color(x,y,unaggroRadius/2,c_blue,c_blue,false)
+//draw_circle_color(x,y,40,c_green,c_green,false)
+//draw_set_alpha(1)
+draw_self()

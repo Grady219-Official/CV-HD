@@ -42,10 +42,10 @@ maxMP = 100
 currentHP = maxHP
 currentMP = maxMP
 
-
+depth -=2
 subX = x
 subY = y
-move_speed = 1.2
+move_speed = 5.2
 slide_speed = 4
 dive_speed = 3
 backdash_speed = -4
@@ -54,8 +54,8 @@ hspd = 0
 hspdFraction = 0
 vspd = 0
 vspdFraction = 0
-grav = .125   //0.125
-jump_strength = 4.55
+grav = 0.125   //0.125
+jump_strength = 8.75  //4.75
 jump2_strength = jump_strength * 0.8
 p1_max_jump = 2
 p1_current_jump = 0

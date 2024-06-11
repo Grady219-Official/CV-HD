@@ -1,4 +1,4 @@
-image_angle += 10
+image_angle -= (rotation * sign(hspd))
 vspd -= grav
 y-=vspd
 x+=hspd

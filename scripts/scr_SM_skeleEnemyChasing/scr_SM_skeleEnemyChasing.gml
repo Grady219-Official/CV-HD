@@ -8,35 +8,43 @@ if (mInnerState == 0)  //enter
 		if (mInnerState == 1)  //update
 		{	
 			 //use ChangeState() to go to next state
-			if(!collision_circle(x,y,100,obj_PL_1,false,true))
+			if(!collision_circle(x,y,unaggroRadius,obj_PL_1,false,true))
 			{
-				ChangeState(SKELE_ENEMY_STATES.ACTIVATED)	
+				ChangeState(SKELE_ENEMY_STATES.IDLE)	
 			}
-		 	else if(irandom_range(1,100) = 1)
-			{
-				ChangeState(SKELE_ENEMY_STATES.ATTACK)
-			}
+		 	
 			else
 			{   
-				if(collision_circle(x,y,40,obj_PL_1,false,true || hspd = 0))
+				if(collision_circle(x,y,40,obj_PL_1,false,true))// || (floor(abs(hspd = 0)) && hspdFraction = 0))
+				{
+						
+					ChangeState(SKELE_ENEMY_STATES.RETREAT)
+					
+				}
+				else if (!collision_circle(x,y,unaggroRadius/2,obj_PL_1,false,true))
 				{
 					
 					if(x <= obj_PL_1.x)
 					{
 						
-						hspd =  -movespeed
+						hspd =  movespeed
 						image_xscale = 1
-						
 					}
 					else
 					{
-						hspd = movespeed
+						hspd = -movespeed
 						image_xscale = -1
 					}
+					
 				}
-				else if(!collision_circle(x,y,90,obj_PL_1,false,true))
+				else
 				{
-						if(x <= obj_PL_1.x)
+					
+					if(irandom_range(1,100) = 1)
+					{
+						ChangeState(SKELE_ENEMY_STATES.ATTACK)
+					}
+					else if(x <= obj_PL_1.x)
 					{
 						
 						hspd =  movespeed
