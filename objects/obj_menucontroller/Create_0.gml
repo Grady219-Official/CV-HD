@@ -8,6 +8,35 @@ cont_Y = obj_savemanager.cont_Y
 cont_X = obj_savemanager.cont_X
 cont_B = obj_savemanager.cont_B
 
+// #macros
+enum characterCursor{
+	SOMA,
+	ALUCARD,
+	JONATHAN,
+	JULIUS,
+	RICHTER,
+	SHANOA,
+	CHARLOTTE,
+	YOKO,
+	MARIA,
+	SIMON,
+	FUMA	
+}
+
+//shader locations
+colorX = 745
+colorY = 610
+colorMargin = 120
+boxOffset = 18
+bgOffset = 628
+
+// char select offsets
+list1X = 560
+list1Y = 360
+list2X = 560
+list2Y = 540
+list3X = 560
+list3Y = 720
 
 
 //Setting up font
@@ -18,11 +47,12 @@ draw_set_font(vremya_font)
 textsize = 0.7
 #endregion
 #region //Setting up variables
-menu_history[0] = "menu_screen1"
-current_menu = "menu_screen1"
+current_menu = "Main Menu"
+menu_history[0] = "Title Screen"
+prev_menu = ""
 menu_display[0] = ""
 #endregion
-#region //Menu Screen 1
+#region //Main Menu
 menu_screen1[0] = "Local Play"
 menu_screen1[1] = "Online Play"
 menu_screen1[2] = "Leaderboards"

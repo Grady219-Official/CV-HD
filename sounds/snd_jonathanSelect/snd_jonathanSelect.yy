@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_jonathanSelect",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.908833,
+  "name":"snd_jonathanSelect",
+  "parent":{
+    "name":"Jonathan",
+    "path":"folders/Sounds/Character/Jonathan.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_jonathanSelect.wav",
+  "type":0,
+  "volume":0.1,
+}

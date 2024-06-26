@@ -2,109 +2,58 @@
 function scr_cancel(_menu,_cursor_index){
 	switch (_menu)
 	{
-		case "local_play": // Local
-		{
+		case "Main Menu":{
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
+			audio_stop_sound(bgm_Hymnus)
+		break;
 			
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,menu_screen1,0,array_length(menu_screen1))
-				obj_cursor.cursor_target = 0
-				current_menu = menu_history[array_length(menu_history)-1]
+		}
+		case "Local Play": // Local
+		{
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
 		break;
 		}
-		case "character": // character select
+		case "Change Characters": // character select
 		{
 			
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				current_menu = menu_history[array_length(menu_history)-1]
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
 		break;
 		}
-		case "chapter": // chapter select
+		case "Select a Chapter": // chapter select
 		{
 			
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				current_menu = menu_history[array_length(menu_history)-1]
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
 		break;
 		}
-		case "status": // status screen
+		case "Status Menu": // status screen
 		{
 			
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 2
-				current_menu = menu_history[array_length(menu_history)-1]
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
 		break;
 		}
 		
-		case "online_play": // Online
+		case "Online Play": // Online
 		{
 			
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,menu_screen1,0,array_length(menu_screen1))
-				obj_cursor.cursor_target = 1
-				current_menu = menu_history[array_length(menu_history)-1]
-				audio_stop_sound(bgm_multiplayer)
-				audio_play_sound(bgm_Hymnus,1,true)
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
+			audio_stop_sound(bgm_multiplayer)
+			audio_play_sound(bgm_Hymnus,1,true)
 		break;
 		}
-		case "options": // Options
+		case "Help & Options": // Options
 		{
 			
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,menu_screen1,0,array_length(menu_screen1))
-				obj_cursor.cursor_target = 4
-				current_menu = menu_history[array_length(menu_history)-1]
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
 		break;
 		}
-		case "settings":  //Settings
+		case "Settings":  //Settings
 		{
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,options,0,array_length(options))
-				obj_cursor.cursor_target = 2
-				current_menu = menu_history[array_length(menu_history)-1]
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
 		break;
 		}
-		case "controller":  //Controller Settings
+		case "Controller Settings":  //Controller Settings
 		{
-			for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_pop(menu_history)
-				array_copy(menu_display,0,settings,0,array_length(settings))
-				obj_cursor.cursor_target = 0
-				current_menu = menu_history[array_length(menu_history)-1]
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
 		break;
 		}
 	}

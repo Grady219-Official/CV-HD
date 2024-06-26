@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"bgm_chapter3",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":91.768166,
+  "name":"bgm_chapter3",
+  "parent":{
+    "name":"Chapter 3",
+    "path":"folders/Sounds/bgm/Stage/Chapter 3.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"bgm_chapter3.mp3",
+  "type":1,
+  "volume":0.1,
+}

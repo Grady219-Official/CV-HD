@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"scr_pal_swap_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_pal_swap_init",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

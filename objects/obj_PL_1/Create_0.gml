@@ -1,6 +1,36 @@
 
 /// @description Insert description here
 // You can write your code in this editor
+
+//Shader test stufff
+color = obj_savemanager.current_color
+
+switch obj_savemanager.current_character{
+	case "Soma Cruz":{
+		palette = spr_Soma_palette
+	break;
+	}
+	case "Alucard":{
+		palette = spr_Alucard_palette
+	break;
+	}
+	case "Jonathan Morris":{
+		palette = spr_Jonathan_palette
+	break;
+	}
+	case "Charlotte Aulin":{
+		palette = spr_Charlotte_palette
+	break;
+	}
+	case "Shanoa":{
+		palette = spr_Shanoa_palette
+	break;
+	}
+}
+
+
+
+
 //Input register
 key_up = ord("W")
 key_left = ord("A")
@@ -45,7 +75,7 @@ currentMP = maxMP
 depth -=2
 subX = x
 subY = y
-move_speed = 5.2
+move_speed = 1.5
 slide_speed = 4
 dive_speed = 3
 backdash_speed = -4
@@ -54,12 +84,15 @@ hspd = 0
 hspdFraction = 0
 vspd = 0
 vspdFraction = 0
-grav = 0.125   //0.125
-jump_strength = 8.75  //4.75
-jump2_strength = jump_strength * 0.8
+jump_strength = 5  //4.75
+grav = 0   //0.125
+max_grav = jump_strength/30
+grav_accel = max_grav/5
+jump2_strength = jump_strength * 0.925
 p1_max_jump = 2
 p1_current_jump = 0
 onGround = false
+maxFallSpeed = 5
 
 update_movement = function()
 {
@@ -152,5 +185,5 @@ isOnGround = function()
 	{
 		vspdFraction = 0
 	}
-	return place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y+1,obj_colBox)
+	return (place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y+1,obj_colBox))
 }

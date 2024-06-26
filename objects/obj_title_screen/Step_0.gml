@@ -3,7 +3,7 @@
 
 
 if(
-	button_check_any(0)
+	button_check_pressed_any(0)
   )
   {
 	room_goto(rom_menu)

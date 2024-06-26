@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_somaSelect",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":1.527167,
+  "name":"snd_somaSelect",
+  "parent":{
+    "name":"Soma",
+    "path":"folders/Sounds/Character/Soma.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_somaSelect.wav",
+  "type":0,
+  "volume":0.1,
+}

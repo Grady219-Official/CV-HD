@@ -1,3 +1,7 @@
+//shader test stuff
+
+
+
 //Debug code  REMOVE LATER!!!!!!!!!!!!
 if(keyboard_check_pressed(vk_escape))
 {
@@ -93,7 +97,24 @@ switch (mState)
 	break;
 	}
 }
-vspd += grav;
+if((!place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y+1,obj_colBox)) && grav < max_grav) {
+grav += grav_accel
+}
+else if((place_meeting(x,y+1,layer_tilemap_get_id("Tiles_1")) || place_meeting(x,y+1,obj_colBox))){
+grav = 0
+}
+else if (grav >= max_grav) {
+grav = max_grav
+}
+
+
+if(!vspd <= maxFallSpeed){
+  vspd += grav;
+}
+else if(vspd < maxFallSpeed) {
+	vspd = maxFallSpeed
+	vspdFraction = 0
+}
 //fraction code
 hspd+=hspdFraction
 	vspd+=vspdFraction

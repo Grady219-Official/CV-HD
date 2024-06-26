@@ -2,34 +2,20 @@
 function scr_confirm(_menu,_cursor_index){
 switch (_menu)
 {
-	case "menu_screen1":
+	case "Main Menu":
 	{
 		switch (_cursor_index)
 		{
 			case 0: //Local
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				current_menu = "local_play"
-				array_push(menu_history,current_menu)
-				instance_create_depth(1170,144,1,obj_pageright)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				
 			break;
 			}
 			case 1: // Online
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,online_play,0,array_length(online_play))
-				obj_cursor.cursor_target = 0
-				current_menu = "online_play"
-				array_push(menu_history,current_menu)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
+				
 				audio_stop_sound(bgm_Hymnus)
 				audio_play_sound(bgm_multiplayer,1,true)
 				instance_create_depth(1170,144,1,obj_pageright)
@@ -45,14 +31,7 @@ switch (_menu)
 			}
 			case 4: //Help and Options
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,options,0,array_length(options))
-				obj_cursor.cursor_target = 0
-				current_menu = "options"
-				array_push(menu_history,current_menu)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageright)
 				break;
 			}
@@ -67,109 +46,91 @@ switch (_menu)
 		}
 	break;
 	}
-	case "local_play":
+	case "Local Play":
 	{
 		switch (_cursor_index)
 		{
 			case 0: // Change Character
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,character,0,array_length(character))
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target],)
 				//obj_cursor.cursor_target = 0
 				switch(obj_savemanager.current_character)
 				{
-					case "Soma":
+					case "Soma Cruz":
 					{
-						obj_cursor.cursor_target = 0
+						obj_cursor.cursor_target = characterCursor.SOMA//change these to fix
 						break;
 					}
 					case "Alucard":
 					{
-						obj_cursor.cursor_target = 1
+						obj_cursor.cursor_target = characterCursor.ALUCARD
 						break;
 					}
-					case "Jonathan":
+					case "Jonathan Morris":
 					{
-						obj_cursor.cursor_target = 2
+						obj_cursor.cursor_target = characterCursor.JONATHAN
 						break;
 					}
-					case "Julius":
+					case "Julius Belmont":
 					{
-						obj_cursor.cursor_target = 3
+						obj_cursor.cursor_target = characterCursor.JULIUS
 						break;
 					}
-					case "Richter":
+					case "Richter Belmont":
 					{
-						obj_cursor.cursor_target = 4
+						obj_cursor.cursor_target = characterCursor.RICHTER
 						break;
 					}
 					case "Shanoa":
 					{
-						obj_cursor.cursor_target = 5
+						obj_cursor.cursor_target = characterCursor.SHANOA
 						break;
 					}
-					case "Charlotte":
+					case "Charlotte Aulin":
 					{
-						obj_cursor.cursor_target = 6
+						obj_cursor.cursor_target = characterCursor.CHARLOTTE
 						break;
 					}
-					case "Yoko":
+					case "Yoko Belnades":
 					{
-						obj_cursor.cursor_target = 7
+						obj_cursor.cursor_target = characterCursor.YOKO
 						break;
 					}
-					case "Maria":
+					case "Maria Renard":
 					{
-						obj_cursor.cursor_target = 8
+						obj_cursor.cursor_target = characterCursor.MARIA
 						break;
 					}
-					case "Simon":
+					case "Simon Belmont":
 					{
-						obj_cursor.cursor_target = 9
+						obj_cursor.cursor_target = characterCursor.SIMON
 						break;
 					}
-					case "Fuma":
+					case "Getsu Fuma":
 					{
-						obj_cursor.cursor_target = 10
+						obj_cursor.cursor_target = characterCursor.FUMA
 						break;
 					}
 				}
-				current_menu = "character"
-				array_push(menu_history,current_menu)
 				instance_create_depth(1170,144,1,obj_pageright)
 			break;
 			}
 			case 1: // Change Chapter
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,chapter,0,array_length(chapter))
-				obj_cursor.cursor_target = 0
-				current_menu = "chapter"
-				array_push(menu_history,current_menu)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageright)
 			break;
 			}
 			case 2: // Status
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,status,0,array_length(status))
-				obj_cursor.cursor_target = 0
-				current_menu = "status"
-				array_push(menu_history,current_menu)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageright)
 			break;
 			}
 			case 3: // Shop
 			{
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
+				instance_create_depth(1170,144,1,obj_pageright)
 			break;
 			}
 			case 4: // Start
@@ -220,344 +181,260 @@ switch (_menu)
 		}
 	break;
 	}
-	case "character":
+	case "Change Characters":
 	{
+		obj_cursor.characterCursorTarget = obj_cursor.cursor_target
+		scr_confirmUpdate(menu_display[obj_cursor.cursor_target])	
+		switch obj_cursor.characterCursorTarget{
+			case characterCursor.SOMA:{
+			obj_cursor.cursor_target = obj_savemanager.somaColor
+			break;
+			}
+			case characterCursor.ALUCARD:{
+			obj_cursor.cursor_target = obj_savemanager.alucardColor
+			break;
+			}
+			case characterCursor.JONATHAN:{
+			    obj_cursor.cursor_target = obj_savemanager.jonathanColor
+			    break;
+			}
+			case characterCursor.CHARLOTTE:{
+			    obj_cursor.cursor_target = obj_savemanager.charlotteColor
+			    break;
+			}
+			case characterCursor.SHANOA:{
+			    obj_cursor.cursor_target = obj_savemanager.shanoaColor
+			    break;
+			}
+			case characterCursor.JULIUS:{
+			    obj_cursor.cursor_target = obj_savemanager.juliusColor
+			    break;
+			}
+			case characterCursor.YOKO:{
+			    obj_cursor.cursor_target = obj_savemanager.yokoColor
+			    break;
+			}
+			case characterCursor.RICHTER:{
+			    obj_cursor.cursor_target = obj_savemanager.richterColor
+			    break;
+			}
+			case characterCursor.MARIA:{
+			    obj_cursor.cursor_target = obj_savemanager.mariaColor
+			    break;
+			}
+			case characterCursor.SIMON:{
+			    obj_cursor.cursor_target = obj_savemanager.simonColor
+			    break;
+			}
+			case characterCursor.FUMA:{
+			    obj_cursor.cursor_target = obj_savemanager.fumaColor
+			    break;
+			}
+		}
+		
+		break;
+	}
+	case "Soma Cruz" :{
+		audio_play_sound(snd_somaSelect,1,false)
+		
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.somaColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.somaColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Alucard" :{
+		audio_play_sound(snd_alucardSelect,1,false)
+		//obj_cursor.characterCursorTarget = characterCursor.ALUCARD
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.alucardColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.alucardColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Jonathan Morris" :{
+		audio_play_sound(snd_jonathanSelect,1,false)
+		obj_cursor.characterCursorTarget = characterCursor.JONATHAN
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.jonathanColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.jonathanColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Charlotte Aulin" :{
+		audio_play_sound(snd_charlotteSelect,1,false)
+		obj_cursor.characterCursorTarget = characterCursor.CHARLOTTE
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.charlotteColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.charlotteColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Shanoa" :{
+		audio_play_sound(snd_shanoaSelect,1,false)
+		obj_cursor.characterCursorTarget = characterCursor.SHANOA
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.shanoaColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.shanoaColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Julius Belmont" :{
+		
+		obj_cursor.characterCursorTarget = characterCursor.JULIUS
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.juliusColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.juliusColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Yoko Belnades" :{
+		
+		obj_cursor.characterCursorTarget = characterCursor.YOKO
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.yokoColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.yokoColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Richter Belmont" :{
+		
+		obj_cursor.characterCursorTarget = characterCursor.RICHTER
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.richterColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.richterColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Maria Renard" :{
+		
+		obj_cursor.characterCursorTarget = characterCursor.MARIA
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.mariaColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.mariaColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Simon Belmont" :{
+		
+		obj_cursor.characterCursorTarget = characterCursor.SIMON
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.simonColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.simonColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Getsu Fuma" :{
+		
+		obj_cursor.characterCursorTarget = characterCursor.FUMA
+		obj_savemanager.current_character = current_menu
+		obj_savemanager.fumaColor = obj_cursor.cursor_target
+		obj_savemanager.current_color = obj_savemanager.fumaColor
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
+	break;
+	}
+	case "Select a Chapter":
+	{
+		obj_savemanager.current_chapter = menu_display[obj_cursor.cursor_target]
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 1],0,true,1)
+		instance_create_depth(1170,144,1,obj_pageleft)
+		
+	break;
+	}
+	case "Status Menu":{
 		switch (_cursor_index)
 		{
-			case 0: // Soma Cruz
+			case 0: // Offensive Gear
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				current_menu = "local_play"
-				array_pop(menu_history)
-				obj_savemanager.current_character = "Soma"
-				
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 1: // Alucard
+			case 1: // Defensive Gear
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				current_menu = "local_play"
-				array_pop(menu_history)
-				obj_savemanager.current_character = "Alucard"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 2: // Jonathan Morris
+			case 2: // Martial Arts
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				current_menu = "local_play"
-				array_pop(menu_history)
-				obj_savemanager.current_character = "Jonathan"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 3: // Julius Belmont
+			case 3: // Offensive Gear
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Julius"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 4: // Richter Belmont
+			case 4: // Monster Compendium
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Richter"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 5: // Shanoa
+			case 5: // Item Compendium
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Shanoa"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 6: // Charlotte Aulin
+			case 6: // Controller Settings
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Charlotte"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 7: // Yoko Belnades
+			case 7: // Sound Settings
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Yoko"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 8: // Maria Renard
+			case 8: // Window Settings
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Maria"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 9: // Simon Belmont
+			case 9: // Screen Settings
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Simon"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
-			case 10: // Getsu Fuma
+			case 10: // Camera Settings
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 0
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_character = "Fuma"
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageleft)
 			break;
 			}
 		}
 	break;
 	}
-	case "chapter":
-	{
+	case "Shop" :{
 		switch (_cursor_index)
 		{
-			case 0: // Chapter 1
+			case 0: // Buy Items
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 1"
-				instance_create_depth(1170,144,1,obj_pageleft)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 			break;
 			}
-			case 1: // Chapter 2
+			case 1: // Sell Items
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 2"
-				instance_create_depth(1170,144,1,obj_pageleft)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 			break;
 			}
-			case 2: // Chapter 3
+			case 2: // Exit Shop
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 3"
-				instance_create_depth(1170,144,1,obj_pageleft)
+				scr_confirmUpdate(menu_history[array_length(menu_history) - 1],0,true)
 			break;
-			}
-			case 3: // Chapter 4
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 4"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 4: // Chapter 5
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 5"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 5: // Chapter 6
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 6"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 6: // Chapter 7
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 7"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 7: // Chapter 8
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 8"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 8: // Chapter 9
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 9"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 9: // Chapter 10
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 10"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 10: // Chapter 11
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Chapter 11"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
-			case 11: // Hub
-			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,local_play,0,array_length(local_play))
-				obj_cursor.cursor_target = 1
-				array_pop(menu_history)
-				current_menu = "local_play"
-				obj_savemanager.current_chapter = "Hub"
-				instance_create_depth(1170,144,1,obj_pageleft)
-			break;
-			}
+			}	
 		}
 	break;
 	}
-	case "options":
+	case "Help & Options":
 	{
 		switch (_cursor_index)
 		{
@@ -571,14 +448,7 @@ switch (_menu)
 			}
 			case 2: // Settings
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,settings,0,array_length(settings))
-				obj_cursor.cursor_target = 0
-				current_menu = "settings"
-				array_push(menu_history,current_menu)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 				instance_create_depth(1170,144,1,obj_pageright)
 			break;
 			}
@@ -593,20 +463,13 @@ switch (_menu)
 		}
 	break;
 	}
-	case "settings":
+	case "Settings":
 	{
 		switch (_cursor_index)
 		{
 			case 0: // Controller Settings
 			{
-				for(i=0;i<array_length(menu_display);i+=1)
-				{
-					array_delete(menu_display,0,array_length(menu_display))
-				}
-				array_copy(menu_display,0,controller,0,array_length(controller))
-				obj_cursor.cursor_target = 0
-				current_menu = "controller"
-				array_push(menu_history,current_menu)
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
 			break;
 			}
 			case 1: // Sound Settings

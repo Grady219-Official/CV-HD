@@ -38,7 +38,7 @@ if(scr_button_check_pressed(true,0,obj_PL_1.pad_faceD,obj_PL_1.key_jump))
 	{
 		case 0:
 		{
-			obj_savemanager.current_character = "Soma"
+			obj_savemanager.current_character = "Soma Cruz"
 		break;
 		}
 		case 1:
@@ -48,12 +48,12 @@ if(scr_button_check_pressed(true,0,obj_PL_1.pad_faceD,obj_PL_1.key_jump))
 		}
 		case 2:
 		{
-			obj_savemanager.current_character = "Jonathan"
+			obj_savemanager.current_character = "Jonathan Morris"
 		break;
 		}
 		case 3:
 		{
-			obj_savemanager.current_character = "Charlotte"
+			obj_savemanager.current_character = "Charlotte Aulin"
 		break;
 		}
 		case 4:
@@ -63,32 +63,32 @@ if(scr_button_check_pressed(true,0,obj_PL_1.pad_faceD,obj_PL_1.key_jump))
 		}
 		case 5:
 		{
-			obj_savemanager.current_character = "Julius"
+			obj_savemanager.current_character = "Julius Belmont"
 		break;
 		}
 		case 6:
 		{
-			obj_savemanager.current_character = "Yoko"
+			obj_savemanager.current_character = "Yoko Belnades"
 		break;
 		}
 		case 7:
 		{
-			obj_savemanager.current_character = "Richter"
+			obj_savemanager.current_character = "Richter Belmont"
 		break;
 		}
 		case 8:
 		{
-			obj_savemanager.current_character = "Maria"
+			obj_savemanager.current_character = "Maria Renard"
 		break;
 		}
 		case 9:
 		{
-			obj_savemanager.current_character = "Simon"
+			obj_savemanager.current_character = "Simon Belmont"
 		break;
 		}
 		case 10:
 		{
-			obj_savemanager.current_character = "Fuma"
+			obj_savemanager.current_character = "Getsu Fuma"
 		break;
 		}
 	}

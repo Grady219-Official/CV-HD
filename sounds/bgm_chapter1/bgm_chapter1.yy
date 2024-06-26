@@ -20,6 +20,6 @@
   "resourceVersion":"2.0",
   "sampleRate":44100,
   "soundFile":"bgm_chapter1.wav",
-  "type":0,
+  "type":1,
   "volume":0.1,
 }

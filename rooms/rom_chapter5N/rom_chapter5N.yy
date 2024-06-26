@@ -263,6 +263,7 @@
     {"name":"inst_43AF5ED7","path":"rooms/rom_chapter5N/rom_chapter5N.yy",},
     {"name":"inst_12992F1E","path":"rooms/rom_chapter5N/rom_chapter5N.yy",},
     {"name":"inst_28C5B254","path":"rooms/rom_chapter5N/rom_chapter5N.yy",},
+    {"name":"inst_2116A1F3","path":"rooms/rom_chapter5N/rom_chapter5N.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -772,6 +773,7 @@
       ],"depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"stage_foreground","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_24EE98AC","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_24EE98AC","objectId":{"name":"obj_PL_1","path":"objects/obj_PL_1/obj_PL_1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":160.0,"y":2160.0,},
+        {"$GMRInstance":"","%Name":"inst_2116A1F3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2116A1F3","objectId":{"name":"obj_stageSoundHandler","path":"objects/obj_stageSoundHandler/obj_stageSoundHandler.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":144.0,"y":2256.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"stage_background","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_13E73C6D","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_13E73C6D","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ch5N_00","path":"sprites/spr_ch5N_00/spr_ch5N_00.yy",},"x":0.0,"y":0.0,},

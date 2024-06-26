@@ -14,7 +14,7 @@ obj_PL_1.anim_diveD    = -1
 obj_PL_1.anim_backdash = -1
 switch (_character)
 	{
-	case "Soma":
+	case "Soma Cruz":
 		{
 			obj_PL_1.anim_idle     = spr_Soma_idle 
 			obj_PL_1.anim_walk     = spr_Soma_walk
@@ -43,7 +43,7 @@ switch (_character)
 			obj_PL_1.anim_backdash = spr_Alu_backdash
 		break;
 		}
-	case "Jonathan":
+	case "Jonathan Morris":
 		{
 			obj_PL_1.anim_idle     = spr_Jon_idle
 			obj_PL_1.anim_walk     = spr_Jon_walk
@@ -58,7 +58,7 @@ switch (_character)
 			obj_PL_1.anim_backdash = spr_Jon_backdash
 		break;
 		}
-	case "Charlotte":
+	case "Charlotte Aulin":
 		{
 			obj_PL_1.anim_idle     = spr_Char_idle
 			obj_PL_1.anim_walk     = spr_Char_walk
@@ -88,21 +88,35 @@ switch (_character)
 			obj_PL_1.anim_backdash = spr_Shan_backdash
 		break;
 		}
-	case "Maria":
+	case "Maria Renard":{}
 		//{
 		//	obj_player1.sprite_index = spr_menuMaria
 		//break;
 		//}
+	default: {
+		   obj_PL_1.anim_idle     = spr_error
+		   obj_PL_1.anim_walk     = spr_error
+		   obj_PL_1.anim_jumpU    = spr_error
+		   obj_PL_1.anim_jumpF    = spr_error
+		   obj_PL_1.anim_jumpA    = spr_error
+		   obj_PL_1.anim_fall     = spr_error
+		   obj_PL_1.anim_crouch   = spr_error
+		   obj_PL_1.anim_slide    = spr_error
+		   obj_PL_1.anim_diveDF   = spr_error
+		   obj_PL_1.anim_backdash = spr_error
+		   obj_PL_1.anim_diveD    = spr_error
+		break;
+		}
 	}
-	if(obj_PL_1.anim_idle     = -1)   {obj_PL_1.anim_idle     = spr_error}
-	if(obj_PL_1.anim_walk     = -1)   {obj_PL_1.anim_walk     = spr_error}
-	if(obj_PL_1.anim_jumpU    = -1)   {obj_PL_1.anim_jumpU    = spr_error}
-	if(obj_PL_1.anim_jumpF    = -1)   {obj_PL_1.anim_jumpF    = spr_error}
-	if(obj_PL_1.anim_jumpA    = -1)   {obj_PL_1.anim_jumpA    = spr_error}
-	if(obj_PL_1.anim_fall     = -1)   {obj_PL_1.anim_fall     = spr_error}
-	if(obj_PL_1.anim_crouch   = -1)   {obj_PL_1.anim_crouch   = spr_error}
-	if(obj_PL_1.anim_slide    = -1)   {obj_PL_1.anim_slide    = spr_error}
-	if(obj_PL_1.anim_diveDF   = -1)   {obj_PL_1.anim_diveDF   = spr_error}
-	if(obj_PL_1.anim_backdash = -1)   {obj_PL_1.anim_backdash = spr_error}
-	if(obj_PL_1.anim_diveD   = -1)    {obj_PL_1.anim_diveD    = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_idle))       {obj_PL_1.anim_idle     = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_walk))       {obj_PL_1.anim_walk     = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_jumpU))      {obj_PL_1.anim_jumpU    = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_jumpF))      {obj_PL_1.anim_jumpF    = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_jumpA))      {obj_PL_1.anim_jumpA    = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_fall))       {obj_PL_1.anim_fall     = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_crouch))     {obj_PL_1.anim_crouch   = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_slide))      {obj_PL_1.anim_slide    = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_diveDF))     {obj_PL_1.anim_diveDF   = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_backdash))   {obj_PL_1.anim_backdash = spr_error}
+	if(!sprite_exists(obj_PL_1.anim_diveD))      {obj_PL_1.anim_diveD    = spr_error}
 }

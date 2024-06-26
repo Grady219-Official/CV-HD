@@ -6,6 +6,7 @@
   "inheritCreationOrder":false,
   "inheritLayers":false,
   "instanceCreationOrder":[
+    {"name":"inst_15357DFB","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
     {"name":"inst_716DC528","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
     {"name":"inst_7FE1A324","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
     {"name":"inst_1E7E36F0","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
@@ -676,6 +677,8 @@
     {"name":"inst_2BDAD207","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
     {"name":"inst_12E59345","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
     {"name":"inst_158EF08F","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
+    {"name":"inst_20BA209B","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
+    {"name":"inst_2B053B16","path":"rooms/rom_chapter2N/rom_chapter2N.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -1549,6 +1552,9 @@
       ],"depth":200,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"stage_foreground","properties":[],"resourceType":"GMRAssetLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":300,"effectEnabled":true,"effectType":null,"gridX":16,"gridY":16,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"","%Name":"inst_22A5C048","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_22A5C048","objectId":{"name":"obj_PL_1","path":"objects/obj_PL_1/obj_PL_1.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3952.0,"y":2336.0,},
+        {"$GMRInstance":"","%Name":"inst_15357DFB","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":true,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_15357DFB","objectId":{"name":"obj_savemanager","path":"objects/obj_savemanager/obj_savemanager.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3952.0,"y":2432.0,},
+        {"$GMRInstance":"","%Name":"inst_20BA209B","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_20BA209B","objectId":{"name":"obj_charChange","path":"objects/obj_charChange/obj_charChange.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3664.0,"y":2352.0,},
+        {"$GMRInstance":"","%Name":"inst_2B053B16","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2B053B16","objectId":{"name":"obj_stageSoundHandler","path":"objects/obj_stageSoundHandler/obj_stageSoundHandler.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":3904.0,"y":2432.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"stage_background","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_12667223","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_12667223","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_ch2N_00","path":"sprites/spr_ch2N_00/spr_ch2N_00.yy",},"x":0.0,"y":0.0,},
