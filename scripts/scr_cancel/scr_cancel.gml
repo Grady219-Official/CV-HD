@@ -22,7 +22,7 @@ function scr_cancel(_menu,_cursor_index){
 		case "Select a Chapter": // chapter select
 		{
 			
-			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1],1)
 		break;
 		}
 		case "Status Menu": // status screen

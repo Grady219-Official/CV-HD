@@ -1,6 +1,6 @@
 ///@function
-///@param {_newMenu}				The new menu to pass to current_menu
-///@param {_cursorPosition}		    The new position of the cursor.  OPTIONAL
+///@param {_newMenu}				    string _newmenu     The new menu to pass to current_menu
+///@param {_cursorPosition}		    real _cursorPosition       The new position of the cursor.  OPTIONAL
 
 
 function scr_cancelUpdate(_newMenu,_cursorPosition = 0){

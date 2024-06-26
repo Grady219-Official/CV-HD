@@ -336,7 +336,7 @@ switch (_menu)
 	case "Select a Chapter":
 	{
 		obj_savemanager.current_chapter = menu_display[obj_cursor.cursor_target]
-		scr_confirmUpdate(menu_history[array_length(menu_history) - 1],0,true,1)
+		scr_confirmUpdate(menu_history[array_length(menu_history) - 1],1,true,1)
 		instance_create_depth(1170,144,1,obj_pageleft)
 		
 	break;
