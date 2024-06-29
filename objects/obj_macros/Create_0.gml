@@ -1,0 +1,2 @@
+#macro CHARACTERLONGSOMA "Soma Cruz"
+#macro CHARACTERLONGALUC "Alucard"
