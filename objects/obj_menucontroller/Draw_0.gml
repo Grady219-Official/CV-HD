@@ -6,7 +6,9 @@ if(current_menu = "Local Play")
 	draw_sprite(spr_playermenu,0,96,195)
 	draw_set_halign(fa_center)
 	draw_text_transformed(795,398,obj_savemanager.current_difficulty,textsize,textsize,0)
+	//
 	draw_text_transformed(308,218,obj_savemanager.current_character,textsize*0.7,textsize*0.7,0)
+	//
 	draw_text_transformed(795,398+75,obj_savemanager.current_chapter,textsize,textsize,0)
 	draw_set_halign(fa_left)
 }
