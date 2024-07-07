@@ -28,14 +28,14 @@ function scr_cancel(_menu,_cursor_index){
 		case "Status Menu": // status screen
 		{
 			
-			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1],2)
 		break;
 		}
 		
 		case "Online Play": // Online
 		{
 			
-			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1],2)
 			audio_stop_sound(bgm_multiplayer)
 			audio_play_sound(bgm_Hymnus,1,true)
 		break;
@@ -43,7 +43,7 @@ function scr_cancel(_menu,_cursor_index){
 		case "Help & Options": // Options
 		{
 			
-			scr_cancelUpdate(menu_history[array_length(menu_history)-1])
+			scr_cancelUpdate(menu_history[array_length(menu_history)-1],3)
 		break;
 		}
 		case "Settings":  //Settings
