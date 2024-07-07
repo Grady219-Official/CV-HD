@@ -1,18 +1,18 @@
 {
   "$GMObject":"",
-  "%Name":"obj_savemanager",
+  "%Name":"obj_macros",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"obj_savemanager",
+  "name":"obj_macros",
   "overriddenProperties":[],
   "parent":{
     "name":"System objects",
     "path":"folders/Objects/System objects.yy",
   },
   "parentObjectId":null,
-  "persistent":true,
+  "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
   "physicsFriction":0.2,
