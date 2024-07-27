@@ -21,7 +21,7 @@ function scr_SM_dive(){
 			//	p1_direction = sign(hMove)
 			//}
 			vspd = 10
-			hspd = (move_speed * 3) * sign(p1_direction)
+			//hspd = (move_speed * 3) * p1_direction
 			if (isOnGround())
 			{
 				ChangeState(PLAYER_STATES.IDLE);
