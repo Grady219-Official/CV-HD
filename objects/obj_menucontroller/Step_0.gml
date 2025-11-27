@@ -64,8 +64,8 @@ switch current_menu{
   case "Local Play":{  			  //>
     array_delete(menu_display,0,array_length(menu_display))  //Clearing array
 	
-	menu_display[0] = "Change Characters"                           //Fill array with relevant data
-	menu_display[1] = "Select a Chapter"
+	menu_display[0] = global.Strings.MenuPagenameCharchange                           //Fill array with relevant data
+	menu_display[1] = global.Strings.MenuPagenameChapchange
 	menu_display[2] = "Status Menu"
 	menu_display[3] = "Shop"
 	menu_display[4] = "Start the Game"
@@ -84,7 +84,7 @@ switch current_menu{
 	menu_display[7]  = "Yoko Belnades"                  
 	menu_display[8]  = "Maria Renard"
 	menu_display[9]  = "Simon Belmont"
-	menu_display[10] = "Getsu Fuma"
+	menu_display[10] = "Getsu Fuma"		
 	break;
   }
   case "Soma Cruz":{ 			  
@@ -233,17 +233,17 @@ switch current_menu{
   case "Select a Chapter":{		//><
     array_delete(menu_display,0,array_length(menu_display))  //Clearing array
 	
-    menu_display[0]	 = "Chapter 1"
-	menu_display[1]	 = "Chapter 2"
-	menu_display[2]	 = "Chapter 3"
-	menu_display[3]	 = "Chapter 4"
-	menu_display[4]	 = "Chapter 5"
-	menu_display[5]	 = "Chapter 6"
-	menu_display[6]	 = "Chapter 7"
-	menu_display[7]	 = "Chapter 8"
-	menu_display[8]	 = "Chapter 9"
-	menu_display[9]	 = "Chapter 10"
-	menu_display[10] = "Chapter 11"
+    menu_display[0]	 = global.Strings.MenuStageChapterPrefix + " 1"
+	menu_display[1]	 = global.Strings.MenuStageChapterPrefix + " 2"
+	menu_display[2]	 = global.Strings.MenuStageChapterPrefix + " 3"
+	menu_display[3]	 = global.Strings.MenuStageChapterPrefix + " 4"
+	menu_display[4]	 = global.Strings.MenuStageChapterPrefix + " 5"
+	menu_display[5]	 = global.Strings.MenuStageChapterPrefix + " 6"
+	menu_display[6]	 = global.Strings.MenuStageChapterPrefix + " 7"
+	menu_display[7]	 = global.Strings.MenuStageChapterPrefix + " 8"
+	menu_display[8]	 = global.Strings.MenuStageChapterPrefix + " 9"
+	menu_display[9]	 = global.Strings.MenuStageChapterPrefix + " 10"
+	menu_display[10] = global.Strings.MenuStageChapterPrefix + " 11"
 	menu_display[11] = "Hub"
 	break;
   }

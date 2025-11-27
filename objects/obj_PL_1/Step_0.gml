@@ -1,5 +1,20 @@
 //shader test stuff
 
+//Afterimage stuff
+for(i=30;i>0;i--)
+{
+	spriteHistory[i][SPRITEHISTORY.SPR_INDEX] = 	   spriteHistory[i-1][SPRITEHISTORY.SPR_INDEX] 
+	spriteHistory[i][SPRITEHISTORY.IMG_INDEX] = 	   spriteHistory[i-1][SPRITEHISTORY.IMG_INDEX]
+	spriteHistory[i][SPRITEHISTORY.X_POS] = 		   spriteHistory[i-1][SPRITEHISTORY.X_POS]
+	spriteHistory[i][SPRITEHISTORY.Y_POS] = 		   spriteHistory[i-1][SPRITEHISTORY.Y_POS]
+	spriteHistory[i][SPRITEHISTORY.PLAYER_DIRECTION] = spriteHistory[i-1][SPRITEHISTORY.PLAYER_DIRECTION]
+}
+spriteHistory[0][SPRITEHISTORY.SPR_INDEX] = sprite_index
+spriteHistory[0][SPRITEHISTORY.IMG_INDEX] = image_index
+spriteHistory[0][SPRITEHISTORY.X_POS] = x
+spriteHistory[0][SPRITEHISTORY.Y_POS] = y
+spriteHistory[0][SPRITEHISTORY.PLAYER_DIRECTION] = image_xscale
+
 
 
 //Debug code  REMOVE LATER!!!!!!!!!!!!
@@ -8,6 +23,14 @@ if(keyboard_check_pressed(vk_escape))
 	audio_stop_all()
 	room_goto(rom_menu)
 }
+//NETWORK TEST STUFF
+data = ds_map_create()
+
+ds_map_add(data, "x", x)
+ds_map_add(data, "y", y)
+ds_map_add(data, "character", obj_savemanager.current_character)
+
+scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
 
 //Get player input
 

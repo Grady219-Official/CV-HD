@@ -27,6 +27,7 @@ function scr_default_values(){
 			curse_resist = 0
 			poison_resist = 0
 			#endregion
+		break;
 		}
 	}
 }

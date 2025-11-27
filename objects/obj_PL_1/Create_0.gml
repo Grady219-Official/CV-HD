@@ -1,6 +1,14 @@
+//Sprite history for afterimage
+enum SPRITEHISTORY
+{
+	SPR_INDEX,
+	IMG_INDEX,
+	X_POS,
+	Y_POS,
+	PLAYER_DIRECTION
+}
 
-/// @description Insert description here
-// You can write your code in this editor
+
 
 //Shader test stufff
 color = obj_savemanager.current_color
@@ -94,6 +102,16 @@ p1_current_jump = 0
 onGround = false
 maxFallSpeed = 5
 
+//initialize for afterimage array
+for(i=0;i<30;i++)
+	{
+	spriteHistory[i][SPRITEHISTORY.SPR_INDEX] = sprite_index
+	spriteHistory[i][SPRITEHISTORY.IMG_INDEX] = image_index
+	spriteHistory[i][SPRITEHISTORY.X_POS] = x
+	spriteHistory[i][SPRITEHISTORY.Y_POS] = y
+	spriteHistory[i][SPRITEHISTORY.PLAYER_DIRECTION] = p1_direction
+	}
+//movement code
 update_movement = function()
 {
 	

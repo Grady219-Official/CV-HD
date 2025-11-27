@@ -1,6 +1,14 @@
 /// @description Insert description here
 // You can write your code in this editor
 scr_pal_swap_init();
+if(file_exists("TextEN.json"))
+{
+	var _buffer = buffer_load("TextEN.json")
+	var _string = buffer_read(_buffer, buffer_string)
+	buffer_delete(_buffer)
+	
+	global.Strings = json_parse(_string)
+}
 
 button_check_pressed_any = function(_gamepad)
 {

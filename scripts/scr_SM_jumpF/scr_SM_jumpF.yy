@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_SM_jumpF",
   "isCompatibility":false,
   "isDnD":false,

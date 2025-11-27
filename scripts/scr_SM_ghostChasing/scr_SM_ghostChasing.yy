@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_SM_ghostChasing",
   "isCompatibility":false,
   "isDnD":false,

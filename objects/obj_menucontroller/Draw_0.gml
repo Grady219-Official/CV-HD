@@ -17,7 +17,7 @@ if(current_menu = "Local Play")
 
 switch(current_menu){
 	
-	case "Soma Cruz":{
+	case global.Strings.CharSomaNameLong:{
 		draw_sprite(spr_selBoxBg,0,bgOffset,colorY)
 		for(i=0;i<8;i++){
 		scr_pal_swap_set(spr_Soma_palette,i)
@@ -102,6 +102,8 @@ switch(current_menu){
 			draw_text_transformed(list3X,list3Y,menu_display[2],textsize*0.75,textsize* 0.75,0)
 			draw_set_color(c_red)
 			draw_text_transformed(list1X,list1Y,menu_display[0],textsize*0.75,textsize* 0.75,0)
+			obj_cursor.x = list1X - 10
+			obj_cursor.y = list1Y +40
 			draw_set_color(c_black)
 		}
 		else if(obj_cursor.cursor_target = array_length(menu_display)-1){
@@ -110,6 +112,8 @@ switch(current_menu){
 			draw_text_transformed(list3X,list3Y,menu_display[array_length(menu_display)-1],textsize*0.75,textsize* 0.75,0)
 			draw_set_color(c_red)
 			draw_text_transformed(list3X,list3Y,menu_display[array_length(menu_display)-1],textsize*0.75,textsize* 0.75,0)
+			obj_cursor.x = list3X -10
+			obj_cursor.y = list3Y +40
 			draw_set_color(c_black)
 		}
 		else{
@@ -118,6 +122,8 @@ switch(current_menu){
 			draw_text_transformed(list3X,list3Y,menu_display[obj_cursor.cursor_target+1],textsize*0.75,textsize* 0.75,0)
 			draw_set_color(c_red)
 			draw_text_transformed(list2X,list2Y,menu_display[obj_cursor.cursor_target],textsize*0.75,textsize* 0.75,0)
+			obj_cursor.x = list2X -10
+			obj_cursor.y = list2Y +40
 			draw_set_color(c_black)
 		}
 	break;

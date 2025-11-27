@@ -11,6 +11,21 @@ cont_Y = vk_numpad5
 cont_X = vk_numpad1
 cont_B = vk_numpad3
 
+enum character
+{
+	Soma,
+	Alucard,
+	Jonathan,
+	Julius,
+	Richter,
+	Shanoa,
+	Charlotte,
+	Yoko,
+	Maria,
+	Simon,
+	Fuma
+}
+
 //Selection data
 current_character = "Soma Cruz"
 current_color = 0

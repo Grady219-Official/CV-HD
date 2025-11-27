@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_SM_backdash",
   "isCompatibility":false,
   "isDnD":false,

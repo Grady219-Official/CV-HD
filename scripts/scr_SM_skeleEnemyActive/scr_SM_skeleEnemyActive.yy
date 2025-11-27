@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"scr_SM_skeleEnemyActive",
   "isCompatibility":false,
   "isDnD":false,

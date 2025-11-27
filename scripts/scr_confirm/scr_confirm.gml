@@ -14,7 +14,7 @@ switch (_menu)
 			}
 			case 1: // Online
 			{
-				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
+				scr_confirmUpdate(MENU_PAGENAME_ONLINE)
 				
 				audio_stop_sound(bgm_Hymnus)
 				audio_play_sound(bgm_multiplayer,1,true)
@@ -181,6 +181,27 @@ switch (_menu)
 		}
 	break;
 	}
+	case "Online Play":
+	{
+		switch (_cursor_index)
+		{
+			case 0: // Co-op mode
+			{
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
+			break;
+			}
+			case 1: // Survival
+			{
+				scr_confirmUpdate(menu_display[obj_cursor.cursor_target])
+			break;
+			}
+			case 2: // Check invites
+			{
+			break;
+			}
+		}
+	break;
+	}
 	case "Change Characters":
 	{
 		obj_cursor.characterCursorTarget = obj_cursor.cursor_target
@@ -240,6 +261,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.somaColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.somaColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.somaColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -249,6 +276,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.alucardColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.alucardColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.alucardColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -258,6 +291,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.jonathanColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.jonathanColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.jonathanColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -267,6 +306,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.charlotteColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.charlotteColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.charlotteColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -276,6 +321,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.shanoaColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.shanoaColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.shanoaColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -285,6 +336,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.juliusColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.juliusColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.juliusColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -294,6 +351,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.yokoColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.yokoColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.yokoColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -303,6 +366,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.richterColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.richterColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.richterColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -312,6 +381,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.mariaColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.mariaColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.mariaColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -321,6 +396,12 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.simonColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.simonColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.simonColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
@@ -330,11 +411,16 @@ switch (_menu)
 		obj_savemanager.current_character = current_menu
 		obj_savemanager.fumaColor = obj_cursor.cursor_target
 		obj_savemanager.current_color = obj_savemanager.fumaColor
+		
+		data = ds_map_create()
+		ds_map_add(data, "character", obj_savemanager.current_character)
+		ds_map_add(data, "color", obj_savemanager.fumaColor)
+		scr_sendMapOverUDP(global.ip, global.port, 100, data, msgType.SET_PLAYER_STAT);
+		
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 2],0,true,2)
 	break;
 	}
-	case "Select a Chapter":
-	{
+	case "Select a Chapter":{
 		obj_savemanager.current_chapter = menu_display[obj_cursor.cursor_target]
 		scr_confirmUpdate(menu_history[array_length(menu_history) - 1],1,true,1)
 		instance_create_depth(1170,144,1,obj_pageleft)
@@ -486,6 +572,31 @@ switch (_menu)
 			}
 			case 4: // Camera settings
 			{
+			break;
+			}
+		}
+	break;
+	}
+	case "Co-op Mode":
+	{
+		switch(_cursor_index)
+		{
+			case 2:
+			{
+				scr_confirmUpdate("Local Play")
+		
+				show_debug_message("Host Button selected")
+				data = ds_map_create();
+		
+				ds_map_add(data, "hostNumber", noone);
+				ds_map_add(data, "playerNumber", noone);
+				ds_map_add(data, "character", obj_savemanager.current_character)
+				ds_map_add(data, "color", obj_savemanager.current_color)
+				ds_map_add(data, "gameMode", "Coop")
+				ds_map_add(data, "difficulty", obj_savemanager.current_difficulty)
+				ds_map_add(data, "chapter", obj_savemanager.current_chapter)
+		
+				scr_sendMapOverUDP(global.ip, global.port, 1000, data, msgType.CREATE_HOST);
 			break;
 			}
 		}
